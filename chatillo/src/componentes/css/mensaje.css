@@ -1,0 +1,51 @@
+.mensaje {
+	display: flex;
+	gap: 20px;
+	margin-bottom: 20px;
+}
+
+.infoMensaje {
+	display: flex;
+	flex-direction: column;
+	color: gray;
+	font-weight: 300;
+}
+
+.infoMensaje img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.contenidoMensaje {
+	max-width: 80%;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.contenidoMensaje p {
+	background-color: white;
+	padding: 10px 20px;
+	border-radius: 0px 10px 10px 10px;
+	max-width: max-content;
+}
+
+.contenidoMensaje img {
+	width: 50%;
+}
+
+.propietario {
+	flex-direction: row-reverse;
+}
+
+.propietario .contenidoMensaje {
+	align-items: flex-end;
+}
+
+.propietario p {
+	background-color: rgb(12, 151, 186);
+	color: white;
+	border-radius: 10px 0px 10px 10px;
+}

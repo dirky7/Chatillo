@@ -1,0 +1,12 @@
+.mensajes {
+	background-color: rgb(196, 243, 255);
+	padding: 10px;
+	height: calc(100% - 160px);
+	overflow: scroll;
+}
+
+@media screen and (max-width: 1250px) {
+	.mensajes {
+		height: calc(100% - 120px);
+	}
+}

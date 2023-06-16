@@ -1,0 +1,12 @@
+.infoUsuario {
+	display: flex;
+	flex-direction: column;
+}
+
+.infoUsuario span {
+	font-weight: 500;
+}
+
+.infoUsuario p {
+    color: lightgray;
+}
