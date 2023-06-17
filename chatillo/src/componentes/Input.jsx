@@ -5,6 +5,8 @@ import Foto from "../imagenes/foto.png"
 import Adjuntar from "../imagenes/adjuntar.png"
 import { AuthContext } from '../context/AuthContext'
 import { ChatContext } from '../context/ChatContext'
+import { arrayUnion, doc, updateDoc } from 'firebase/firestore'
+import 
 
 export const Input = () => {
 
@@ -14,8 +16,19 @@ export const Input = () => {
 	const {currentUser} = useContext(AuthContext);
 	const {data} = useContext(ChatContext);
 
-	const handleSend = () => {
+	const handleSend = async () => {
+		if(img)
+		{
 
+		}
+		else
+		{
+			await updateDoc(doc(db, "chats", data.chatId), {
+				mensajes: arrayUnion({
+					id:
+				})
+			})
+		}
 	}
 
 	return (
