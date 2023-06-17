@@ -1,0 +1,24 @@
+.userChatInfo {
+	display: flex;
+	flex-direction: column;
+}
+
+.userChatInfo span {
+	font-weight: 500;
+}
+
+.userChatInfo p {
+	margin-top: 7px;
+	font-size: 12px;
+	width: 240px;
+    color: lightgray;
+	overflow:hidden; 
+	white-space:nowrap; 
+	text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 1250px) {
+	.userChatInfo p {
+		width: 140px;
+	}
+}

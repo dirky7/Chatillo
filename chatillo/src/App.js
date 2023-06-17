@@ -1,33 +1,39 @@
-import Registro from './paginas/Registro'
-import Login from './paginas/Login';
-import Inicio from './paginas/Inicio';
-import "./styles.css"
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import "./styles.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useContext } from 'react';
-import { AuthContext } from './context/AuthContext';
+import { useContext } from "react";
+import { AuthContext } from "./context/AuthContext";
+import Index from "./pages/Index";
 
 function App() {
+	const { currentUser } = useContext(AuthContext);
 
-	const {currentUser} = useContext(AuthContext);
-
-	const RutaProtegida = ({children}) => {
-		if (!currentUser)
-		{
-			return <Navigate to={"/login"}/>
+	const ProtectedRoute = ({ children }) => {
+		if (!currentUser) {
+			return <Navigate to="/login" />;
 		}
-
 		return children
-	}
+	};
 
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path='/'>
-					<Route index element={<RutaProtegida>
-						<Inicio/>
-					</RutaProtegida>}></Route>
-					<Route path='login' element={<Login/>}></Route>
-					<Route path='registrate' element={<Registro/>}></Route>
+				<Route path="/">
+					<Route index element = {
+						<Index/>
+					}/>
+					<Route
+						path="chats"
+						element = {
+							<ProtectedRoute>
+								<Home />
+							</ProtectedRoute>
+						}
+					/>
+					<Route path="login" element={<Login />} />
+					<Route path="register" element={<Register />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>

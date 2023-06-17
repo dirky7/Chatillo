@@ -1,0 +1,49 @@
+.index {
+	height: 100vh;
+	background-color: aliceblue;
+}
+
+.index .main {
+	padding-top: 20vh;
+	height: 75vh;
+	font-size: 50px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.index .main span {
+	color: rgb(0, 136, 170);
+}
+.index .main span:nth-of-type(2) {
+	color: rgb(255, 212, 42);
+}
+
+.main p {
+	padding: 7vh;
+	font-size: 30px;
+
+}
+
+.main .button {
+	display: flex;
+	align-items: center;
+	gap: 50px;
+}
+
+.main .button button {
+	padding: 20px 50px;
+	border-radius: 10px;
+	font-weight: bolder;
+	font-size: 0.4em;
+	background-color: rgb(0, 136, 170);
+}
+
+.main .button a:nth-of-type(2) button {
+	background-color: rgb(255, 212, 42);
+}
+
+.index .footer {
+	display: flex;
+	justify-content: space-around;
+}

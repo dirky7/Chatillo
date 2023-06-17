@@ -1,5 +1,5 @@
 .input {
-	height: 50px;
+	height: 30px;
 	background-color: white;
 	padding: 10px;
 	display: flex;
@@ -23,18 +23,18 @@
   color: lightgray;
 }
 
-.enviar {
+.send {
 	display: flex;
 	align-items: center;
 	gap: 10px;
 }
 
-.enviar img {
+.send img {
 	height: 24px;
 	cursor: pointer;
 }
 
-.enviar button {
+.send button {
 	border: none;
 	padding: 10px 15px;
 	color: white;

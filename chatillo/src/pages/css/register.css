@@ -6,13 +6,13 @@
 	justify-content: center;
 }
 
-	.titulo {
+	.logo {
 		color: rgb(0, 74, 93);
 		font-weight: bold;
 		font-size: 24px;
 	}
 
-	.subtitulo {
+	.title {
 		color: rgb(0, 74, 93);
 		font-size: 12px;
 	}
@@ -62,7 +62,7 @@
         cursor: pointer;
 	}
 
-	p {
+	.formContainer p  {
 		font-size: 12px;
 		margin-top: 10px;
 	}

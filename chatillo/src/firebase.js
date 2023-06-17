@@ -1,19 +1,19 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDxx_XaSLioOud1RwvwDVthVsJSABCjdMI",
-  authDomain: "chatillo-8e41b.firebaseapp.com",
-  projectId: "chatillo-8e41b",
-  storageBucket: "chatillo-8e41b.appspot.com",
-  messagingSenderId: "744609800518",
-  appId: "1:744609800518:web:454703de8e953a0f38c547"
+	apiKey: "AIzaSyAio9PRplolRuvyLi_O2D1narsXCqUjiR8",
+	authDomain: "chatillo-442e9.firebaseapp.com",
+	projectId: "chatillo-442e9",
+	storageBucket: "chatillo-442e9.appspot.com",
+	messagingSenderId: "789473032322",
+	appId: "1:789473032322:web:507895bc50a219b4fadc9b",
+	measurementId: "G-PTVKXNW23F"
 };
 
-// Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
 export const storage = getStorage();
-export const db = getFirestore();
+export const db = getFirestore()
