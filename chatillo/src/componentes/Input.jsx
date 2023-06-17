@@ -14,16 +14,20 @@ export const Input = () => {
 	const {currentUser} = useContext(AuthContext);
 	const {data} = useContext(ChatContext);
 
+	const handleSend = () => {
+
+	}
+
 	return (
 		<div className="input">
-			<input type="text" placeholder='Escribe algo ...' />
+			<input type="text" placeholder='Escribe algo ...' onChange={e => setTexto(e.target.value)}/>
 			<div className="enviar">
 				<img src={Adjuntar} alt="" />
-				<input type="file" id="" />
+				<input type="file" id="file" onChange={e => setImg(e.target.files[0])} />
 				<label htmlFor="file">
 					<img src={Foto} alt="" />
 				</label>
-				<button>
+				<button onClick={handleSend}>
 					Enviar
 				</button>
 			</div>
