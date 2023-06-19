@@ -33,40 +33,43 @@ const Input = () => {
 
 	const handleSend = async () => {
 
-		var encryptedMsg = encryptMessage(text);
+		if (text !== "")
+		{
+			var encryptedMsg = encryptMessage(text);
 
-		if (img) {
-			const storageRef = ref(storage, uuid());
+			if (img) {
+				const storageRef = ref(storage, uuid());
 
-			const uploadTask = uploadBytesResumable(storageRef, img);
+				const uploadTask = uploadBytesResumable(storageRef, img);
 
-			uploadTask.on(
-				(error) => {
-					console.log(error);
-				},
-				() => {
-					getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
-						await updateDoc(doc(db, "chats", data.chatId), {
-							messages: arrayUnion({
-								id: uuid(),
-								text: encryptedMsg,
-								senderId: currentUser.uid,
-								date: Timestamp.now(),
-								img: downloadURL,
-							}),
+				uploadTask.on(
+					(error) => {
+						console.log(error);
+					},
+					() => {
+						getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+							await updateDoc(doc(db, "chats", data.chatId), {
+								messages: arrayUnion({
+									id: uuid(),
+									text: encryptedMsg,
+									senderId: currentUser.uid,
+									date: Timestamp.now(),
+									img: downloadURL,
+								}),
+							});
 						});
-					});
-				}
-			);
-		} else {
-			await updateDoc(doc(db, "chats", data.chatId), {
-				messages: arrayUnion({
-					id: uuid(),
-					text: encryptedMsg,
-					senderId: currentUser.uid,
-					date: Timestamp.now(),
-				}),
-			});
+					}
+				);
+			} else {
+				await updateDoc(doc(db, "chats", data.chatId), {
+					messages: arrayUnion({
+						id: uuid(),
+						text: encryptedMsg,
+						senderId: currentUser.uid,
+						date: Timestamp.now(),
+					}),
+				});
+			}
 		}
 
 		await updateDoc(doc(db, "userChats", currentUser.uid), {
