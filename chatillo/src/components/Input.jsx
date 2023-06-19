@@ -27,7 +27,7 @@ const Input = () => {
 	const { data } = useContext(ChatContext);
 
 	const encryptMessage = (m) => {
-		var encrypted = CryptoJS.AES.encrypt(m, data.chatId).toString();
+		var encrypted = CryptoJS.AES.encrypt(JSON.stringify(m), data.chatId).toString();
 		return (encrypted);
 	}
 

@@ -30,13 +30,12 @@ const Message = ({ message }) => {
 	}
 
 	const decryptMessage = (m) => {
-		var encrypt = m;
-		
-		var bytes = CryptoJS.AES.decrypt(encrypt, data.chatId);
 
-		var decrypt = bytes.toString(CryptoJS.enc.Utf8);
+		var decrypt = CryptoJS.AES.decrypt(m, data.chatId).toString(CryptoJS.enc.Utf8);
 
-		return(decrypt);
+		var parseFix = decrypt.split('\"');
+
+		return(parseFix[1]);
 	}
 
 	return (
